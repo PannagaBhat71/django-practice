@@ -20,5 +20,7 @@ from app import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',views.index,name='index'),
+    path('<int:voter_id>/',views.detail, name='detail'),
+    path('<int:voter_id>/result',views.result, name='result'),
+    path('<int:voter_id>/vote',views.vote, name='vote'),
 ]
